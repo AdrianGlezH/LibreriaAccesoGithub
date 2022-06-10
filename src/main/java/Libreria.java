@@ -13,13 +13,13 @@ public class Libreria {
     static PrintWriter esc;
     static GitHub github = null;
     static GHRepository repo=null;
-    public static GitHub Token(String pathalFich){
-        File file=new File(pathalFich);
+    public static GitHub Token(String pathFich){
+        File file=new File(pathFich);
 
         if(file.exists()){
             try {
                 github = new GitHubBuilder()
-                        .fromPropertyFile(pathalFich)
+                        .fromPropertyFile(pathFich)
                         .build();
             } catch (IOException e) {
                 System.out.println(e.getMessage());
